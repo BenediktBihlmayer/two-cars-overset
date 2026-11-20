@@ -1,0 +1,23 @@
+// Generated for OpenCFD OpenFOAM v2406. SI units.
+FoamFile
+{
+    version 2.0;
+    format ascii;
+    class dictionary;
+    object dynamicMeshDict;
+}
+
+dynamicFvMesh dynamicOversetFvMesh;
+    solver multiSolidBodyMotionSolver;
+    multiSolidBodyMotionSolverCoeffs
+    {
+        movingZone
+        {
+            solidBodyMotionFunction tabulated6DoFMotion;
+            tabulated6DoFMotionCoeffs
+            {
+                CofG (9 0 0);
+                timeDataFileName "$FOAM_CASE/constant/car2Motion.dat";
+            }
+        }
+    }
